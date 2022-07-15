@@ -1,6 +1,6 @@
 {
-  "name": "nestjs-agenda",
-  "version": "2.0.0",
+  "name": "@soumdbeef/nestjs-agenda",
+  "version": "3.0.0",
   "description": "agenda for nest.js",
   "main": "dist/index.js",
   "scripts": {
@@ -18,18 +18,17 @@
   "author": "Alex Chen",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hanFengSan/nestjs-agenda/issues"
+    "url": "https://github.com/soundbeef/nestjs-agenda/issues"
   },
-  "homepage": "https://github.com/hanFengSan/nestjs-agenda#readme",
+  "homepage": "https://github.com/soundbeef/nestjs-agenda#readme",
   "dependencies": {
-    "@nestjs/common": "^6.6.7",
-    "@nestjs/core": "^6.6.7",
-    "@types/agenda": "^2.0.5",
-    "agenda": "^3.1.0",
+    "@hokify/agenda": "^6.2.11",
+    "@nestjs/common": "^9.0.2",
+    "@nestjs/core": "^9.0.2",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "^6.5.3"
+    "rxjs": "^7.2.0"
   },
   "devDependencies": {
-    "typescript": "^3.6.3"
+    "typescript": "^4.3.5"
   }
 }

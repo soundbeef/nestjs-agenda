@@ -1,7 +1,7 @@
-import { Module, DynamicModule, Provider, Inject } from '@nestjs/common';
+import { Module, DynamicModule, Provider } from '@nestjs/common';
 import { AgendaModuleOptions, AgendaModuleAsyncOptions, AgendaOptionsFactory } from './interfaces';
 import { AGENDA_MODULE_OPTIONS } from './agenda.constants';
-import * as Agenda from 'agenda';
+import { Agenda } from '@hokify/agenda';
 
 function createAgendaProvider(options: AgendaModuleOptions): any[] {
   return [{ provide: AGENDA_MODULE_OPTIONS, useValue: options || {} }];
@@ -13,8 +13,17 @@ export class AgendaService extends Agenda {}
   providers: [
     {
       provide: AgendaService,
-      useFactory: async (options) => {
+      useFactory: async (options: AgendaModuleOptions) => {
         const agenda = new Agenda(options);
+
+        async function graceful() {
+            await agenda.stop();
+            process.exit(0);
+        }
+
+        process.on('SIGTERM', graceful);
+        process.on('SIGINT', graceful);
+
         await agenda.start();
         return agenda;
       },

@@ -1,8 +1,23 @@
 import { ModuleMetadata, Type } from '@nestjs/common/interfaces';
-import * as Agenda from 'agenda';
+import { IDatabaseOptions, IDbConfig, IMongoOptions } from '@hokify/agenda';
+import { ForkOptions } from 'child_process';
 
-export interface AgendaModuleOptions extends Agenda.AgendaConfiguration {}
-
+// Hacking this for now because @hokify/agenda doesn't expose the config type
+export type AgendaModuleOptions = {
+    name?: string;
+    defaultConcurrency?: number;
+    processEvery?: string | number;
+    maxConcurrency?: number;
+    defaultLockLimit?: number;
+    lockLimit?: number;
+    defaultLockLifetime?: number;
+} & (IDatabaseOptions | IMongoOptions | {}) & IDbConfig & {
+    forkHelper?: {
+        path: string;
+        options?: ForkOptions;
+    };
+    forkedWorker?: boolean;
+}
 export interface AgendaOptionsFactory {
   createAgendaOptions(): Promise<AgendaModuleOptions> | AgendaModuleOptions;
 }
