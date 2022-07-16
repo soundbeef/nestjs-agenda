@@ -3,6 +3,10 @@
   "version": "3.0.0",
   "description": "agenda for nest.js",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
   "scripts": {
     "build": "rm -rf dist && tsc -p tsconfig.json",
     "test": "echo \"Error: no test specified\" && exit 1"
