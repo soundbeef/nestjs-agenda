@@ -1,5 +1,5 @@
 {
-  "name": "@soumdbeef/nestjs-agenda",
+  "name": "@soundbeef/nestjs-agenda",
   "version": "3.0.0",
   "description": "agenda for nest.js",
   "main": "dist/index.js",
