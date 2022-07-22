@@ -56,7 +56,6 @@ export class AgendaCoreModule implements OnApplicationShutdown {
         const agendaProvider = {
             provide: agendaProcessorName,
             async useFactory(options: AgendaModuleOptions) {
-                console.log('sheee', options);
                 const agenda = new Agenda(options);
                 agenda.name(agendaProcessorName);
                 await agenda.start();
