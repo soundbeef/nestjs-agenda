@@ -27,4 +27,5 @@ export interface AgendaModuleAsyncOptions extends Pick<ModuleMetadata, 'imports'
   useClass?: Type<AgendaOptionsFactory>;
   useFactory?: (...args: any[]) => Promise<AgendaModuleOptions> | AgendaModuleOptions;
   inject?: any[];
+  name?: string;
 }

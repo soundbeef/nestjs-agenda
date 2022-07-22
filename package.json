@@ -1,6 +1,6 @@
 {
   "name": "@soundbeef/nestjs-agenda",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "agenda for nest.js",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -26,13 +26,19 @@
   },
   "homepage": "https://github.com/soundbeef/nestjs-agenda#readme",
   "dependencies": {
-    "@hokify/agenda": "^6.2.11",
+    "rxjs": "^7.5.6"
+  },
+  "peerDependencies": {
     "@nestjs/common": "^9.0.2",
     "@nestjs/core": "^9.0.2",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "^7.2.0"
+    "@hokify/agenda": "^6.2.11"
   },
   "devDependencies": {
-    "typescript": "^4.3.5"
+    "typescript": "^4.3.5",
+    "@nestjs/common": "^9.0.2",
+    "@nestjs/core": "^9.0.2",
+    "reflect-metadata": "^0.1.13",
+    "@hokify/agenda": "^6.2.11"
   }
 }
